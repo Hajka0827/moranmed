@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Моран мед</title>
+        <meta charset="UTF-8">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: white;
+            display: flex;
+            padding: 10px 20px;
+            justify-content: space-between;
+        }
+        header .logo{
+            height: 50px;
+        }
+        header nav{
+            display: flex;
+            align-items: center;
+        }
+        .link{
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+        .link:hover{
+            background-color: #56bca4;
+            color: white;
+        }
+        footer{
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        h1{
+            text-align: center;
+            font-size: 32px;
+        }
+        .img{
+            width: 600px;
+        }
+        .txt{
+            width: 600px;
+            margin: auto;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .card{
+            width: 250px;
+            height: 350px;
+            background-color: #edf3fa;
+        }
+        .card img{
+            width: 100%;
+            padding: 20px;
+        }
+        .card p{
+            font-size: 24px;
+            text-align: center;
+        }
+        .d1{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .d2{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <img src="./Logo.png" class="logo" alt="">
+            <nav>
+                <a class="link" href="./">Нүүр</a>
+                <a class="link" href="./about.html">Бидний тухай</a>
+                <a class="link" href="./service.html">Үйлчилгээ</a>
+                <a class="link" href="./contact.html">Холбогдох</a>
+                <a class="link" href="./location.html">Хаяг</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Үйлчилгээ</h1>
+            <p class="txt">
+               Илэрч буй ерөнхий шинж тэмдэгийг сонгоно уу?
+            </p>
+            <section>
+                <div class="d1">
+                    <div class="card">
+                        <img src="./s1.png" alt="">
+                        <p>Халуурах</p>
+                    </div>
+                    <div class="card">
+                        <img src="./s2.png" alt="">
+                        <p>Нууруу өвдөх</p>
+                    </div>
+                </div>
+                <div class="d2">
+                    <div class="card">
+                        <img src="./s3.png" alt="">
+                        <p>Бөөлжих</p>
+                    </div>
+                    <div class="card">
+                        <img src="./s4.png" alt="">
+                        <p>Толгой өвдөх</p>
+                    </div>
+                    <div class="card">
+                        <img src="./s5.png" alt="">
+                        <p>Бие сулдах</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            2024 Хуулиар хамгаалагдсан
+        </footer>
+    </body>
+</html>

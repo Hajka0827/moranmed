@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Моран мед</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: white;
+            display: flex;
+            padding: 10px 20px;
+            justify-content: space-between;
+        }
+        header .logo{
+            height: 50px;
+        }
+        header nav{
+            display: flex;
+            align-items: center;
+        }
+        .link{
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+        .link:hover{
+            background-color: #56bca4;
+            color: white;
+        }
+        footer{
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        h1{
+            text-align: center;
+            font-size: 32px;
+        }
+        .img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .cimg{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .txt{
+            width: 800px;
+            margin: auto;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        .btns{
+            margin: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background-color: aliceblue;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 150px;
+            border: none;
+            background-color: #56bca4;
+            font-size: 20px;
+            color: white;
+        }
+        .caption{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./Logo.png" class="logo" alt="">
+        <nav>
+            <a class="link" href="./">Нүүр</a>
+            <a class="link" href="./about.html">Бидний тухай</a>
+            <a class="link" href="./service.html">Үйлчилгээ</a>
+            <a class="link" href="./contact.html">Холбогдох</a>
+            <a class="link" href="./location.html">Хаяг</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Бидний тухай</h1>
+        <div class="cimg">
+            <img class="img" src="./about/1.jpg" alt="Чагнуур">
+            <img class="img" src="./about/2.jpg" alt="Лаборатори">
+            <img class="img" src="./about/3.jpg" alt="Орчин">
+            <img class="img" src="./about/4.jpg" alt="Онош">
+            <img class="img" src="./about/5.jpg" alt="Мэс засал">
+        </div>
+        <div class="btns">
+            <button class="previous-btn btn">＜ өмнөх</button>
+            <div class="caption"></div>
+            <button class="next-btn btn">дараах ＞</button>
+        </div>
+        <p class="txt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quas nobis, sunt consequatur deleniti facilis iusto sapiente qui consequuntur a corrupti, at molestiae! Expedita nihil nulla quod, eos maxime sapiente autem alias voluptates omnis consectetur, sed aliquid mollitia corrupti ipsum debitis aliquam beatae modi natus! Voluptatem totam deserunt modi repudiandae, placeat temporibus provident quos eaque dolor accusantium in cupiditate obcaecati a molestias accusamus. Natus quam tempora est praesentium? Cupiditate eius pariatur odio quaerat accusamus vitae reiciendis explicabo autem. Maiores voluptatem ex tempora pariatur exercitationem illum consequatur autem repellendus minima, saepe necessitatibus mollitia quis, eligendi recusandae, deleniti repellat in? Minus iste beatae suscipit, quia necessitatibus omnis excepturi odit autem cupiditate voluptates sed alias laudantium esse. Ipsam repellat sed, incidunt distinctio quasi eligendi! Fugiat, dolor ipsam reprehenderit libero eius corporis voluptatem. Totam enim atque provident non nulla dolores, animi est consequatur harum excepturi tenetur natus, iusto laboriosam dolor nostrum corrupti. Dolore, vero!
+        </p>
+    </main>
+    <footer>
+        2024 Хуулиар хамгаалагдсан
+    </footer>
+</body>
+</html>
+
+<script>
+    const images = document.querySelectorAll(".img");
+    const caption = document.querySelector(".caption");
+    const prevBtn = document.querySelector(".previous-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const totalImages = images.length;
+    let imageIndex = 0;
+
+    window.addEventListener("load", () => {
+        updateSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        imageIndex--;
+        if (imageIndex < 0) {
+            imageIndex = totalImages - 1;
+        }
+        updateSlider();
+    });
+
+
+    nextBtn.addEventListener("click", () => {
+        imageIndex++;
+        if (imageIndex > totalImages - 1) {
+            imageIndex = 0;
+        }
+        updateSlider();
+    });
+
+
+    function updateSlider() {
+        images.forEach((image, index) => {
+            if (index === imageIndex) {
+                image.style.display = "block";
+                caption.innerHTML = image.alt;
+            } else {
+                image.style.display = "none";
+            }
+        });
+    }
+</script>
